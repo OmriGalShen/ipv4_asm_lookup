@@ -16,6 +16,7 @@ def load_ipv4_tsv_file(path_to_tsv: str) -> BinTrie:
     Autonomous System name
     and returns binary trie used for asm lookup based on ip
     """
+    print("Reading tsv file.. may take a minute")
     res_tree = BinTrie()
     try:
         with open(path_to_tsv, "r", encoding="utf8") as file:
@@ -50,19 +51,19 @@ def is_valid_ipv4(ipv4: str) -> bool:
     return True
 
 
-def user_input_loop(lookup_tree: BinTrie):
+def user_input_loop(asm_lookup_tree: BinTrie):
     """
     Basic cli, receives from user ip and displays ASM found
     """
     while True:
         print("\n* Enter nothing to exit *")
         user_input = input("Enter ip (example: 31.13.24.0): ")
-        if not is_valid_ipv4(user_input):
+        if user_input == '':  # exit condition
+            break
+        elif not is_valid_ipv4(user_input):
             print("Invalid ipv4 format")
-        elif user_input == '':  # exit condition
-            exit(0)
         else:
-            res = ip_to_asm_lookup(lookup_tree, user_input)
+            res = ip_to_asm_lookup(asm_lookup_tree, user_input)
             if res is not None:
                 print(f"ASM result: {res}")
             else:
