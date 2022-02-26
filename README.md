@@ -14,6 +14,7 @@ For quick lookup of ASM given ipv4
 
 ## How to use:  
 1. Extract 'ip2asn-v4-u32.tsv.gz', such that 'ip2asn-v4-u32.tsv' should be in project folder  
-2. Run 'python .\lookup.py' to run with default 'ip2asn-v4-u32.tsv' file  
-3. Run 'python .\lookup.py path_to_tsv' to run other tsv file (such as 'exmaple.tsv' in project file)  
-4. Follow basic cli instructions
+2. Make sure python3 is used with 'python --version' or 'python3 --version'
+3. Run 'python .\lookup.py' to run with default 'ip2asn-v4-u32.tsv' file  
+4. Run 'python .\lookup.py path_to_tsv' to run other tsv file (such as 'exmaple.tsv' in project file)  
+5. Follow basic cli instructions
