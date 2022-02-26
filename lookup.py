@@ -2,7 +2,7 @@ import csv
 import ipaddress
 import sys
 
-from ipv4_to_asm.bin_trie import common_bin_prefix, BinTrie, u32_to_32b_str
+from bin_trie import common_bin_prefix, BinTrie, u32_to_32b_str
 
 
 def load_ipv4_tsv_file(path_to_tsv: str) -> BinTrie:
